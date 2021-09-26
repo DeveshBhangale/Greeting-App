@@ -3,25 +3,6 @@ package com.bridgelabz.greetingapp.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-<<<<<<< HEAD
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class GreetingController {
-    // private static final String template = "Hello, %s!";
-    // private final AtomicLong counter = new AtomicLong();
-    @RequestMapping("/jsonObject")
-    public Map<String, String> sayHello() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("key", "value");
-        map.put("foo", "bar");
-        map.put("aa", "bb");
-        return map;
-    }
-}
-=======
 import com.bridgelabz.greetingapp.Services.Greeting;
 import com.bridgelabz.greetingapp.Services.GreetingService;
 
@@ -34,17 +15,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/GreetingController")
 public class GreetingController {
     public GreetingService gService = new GreetingService();
     private static int id;
 
-    @GetMapping("/jsonObject")
+    
+    @RequestMapping("/jsonObject")
     public Map<String, String> sayHello() {
         HashMap<String, String> map = new HashMap<>();
         map.put("key", "value");
-        map.put("foo", "foo");
-        map.put("aa", "basdb");
+        map.put("foo", "bar");
+        map.put("aa", "bb");
         return map;
     }
 
@@ -89,6 +70,4 @@ public class GreetingController {
     public String deleteData(@RequestParam int id){
         return gService.deleteData(id);
     }
-
 }
->>>>>>> UC8
