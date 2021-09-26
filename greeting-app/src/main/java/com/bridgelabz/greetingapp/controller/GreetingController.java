@@ -6,6 +6,7 @@ import java.util.Map;
 import com.bridgelabz.greetingapp.Services.Greeting;
 import com.bridgelabz.greetingapp.Services.GreetingService;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -63,6 +64,11 @@ public class GreetingController {
     @PutMapping("/setMessage")
     public String editMessageByid(@RequestParam int id,@RequestParam String message){
         return gService.editMessageByid(id,message);
+    }
+
+    @DeleteMapping("/deleteData")
+    public String deleteData(@RequestParam int id){
+        return gService.deleteData(id);
     }
 
 }

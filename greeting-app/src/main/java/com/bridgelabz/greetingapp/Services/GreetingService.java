@@ -20,6 +20,12 @@ public class GreetingService {
         return "Failed";
     }
 
+    public String deleteData(int id) {
+        if(list.remove(list.get(id-1)))
+            return "Success";
+        return "failed";
+    }
+
     
     
 }
