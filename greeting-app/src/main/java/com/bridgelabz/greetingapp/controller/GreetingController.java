@@ -8,6 +8,7 @@ import com.bridgelabz.greetingapp.Services.GreetingService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,7 +57,12 @@ public class GreetingController {
 
     @GetMapping("/getData")
     public String getData(){
-        return gService.list.toString();
+        return GreetingService.list.toString();
+    }
+
+    @PutMapping("/setMessage")
+    public String editMessageByid(@RequestParam int id,@RequestParam String message){
+        return gService.editMessageByid(id,message);
     }
 
 }

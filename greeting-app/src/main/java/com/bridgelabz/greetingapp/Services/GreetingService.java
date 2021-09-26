@@ -15,6 +15,11 @@ public class GreetingService {
         return list.get(id-1).getMessage();
     }
 
+    public String editMessageByid(int id, String message) {
+        if(list.get(id-1).setMessage(message))return "Success";
+        return "Failed";
+    }
+
     
     
 }
