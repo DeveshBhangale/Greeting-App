@@ -54,4 +54,9 @@ public class GreetingController {
         return gService.greetingMessageByID(id);
     }
 
+    @GetMapping("/getData")
+    public String getData(){
+        return gService.list.toString();
+    }
+
 }
