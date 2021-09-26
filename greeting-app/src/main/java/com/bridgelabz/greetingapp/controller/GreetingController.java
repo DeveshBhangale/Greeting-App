@@ -6,6 +6,7 @@ import java.util.Map;
 import com.bridgelabz.greetingapp.Services.Greeting;
 import com.bridgelabz.greetingapp.Services.GreetingService;
 
+import org.apache.logging.log4j.message.Message;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,20 +34,20 @@ public class GreetingController {
 	}
 
     @PostMapping("/addData")
-    public String addData(@RequestParam String fName,@RequestParam String lName ){
+    public String addData(@RequestParam String fName,@RequestParam String lName,@RequestParam String message){
         id +=1;
-        return gService.addData(new Greeting(id, fName, lName));
+        return gService.addData(new Greeting(id, fName, lName,message));
     }
 
     @PostMapping("/addfName")
-    public String addfName(@RequestParam String fName){
+    public String addfName(@RequestParam String fName,@RequestParam String message){
         id +=1;
-        return gService.addData(new Greeting(id, fName, ""));
+        return gService.addData(new Greeting(id, fName, "",message));
     }
     @PostMapping("/addDatalName")
-    public String addDatalName(@RequestParam String lName ){
+    public String addDatalName(@RequestParam String lName,@RequestParam String message){
         id +=1;
-        return gService.addData(new Greeting(id, "", lName));
+        return gService.addData(new Greeting(id, "", lName,message));
     }
 
 }
