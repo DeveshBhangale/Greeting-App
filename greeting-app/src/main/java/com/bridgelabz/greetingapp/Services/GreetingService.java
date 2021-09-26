@@ -11,6 +11,10 @@ public class GreetingService {
         return list.toString();
     }
 
+    public String greetingMessageByID(int id) {
+        return list.get(id-1).getMessage();
+    }
+
     
     
 }

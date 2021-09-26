@@ -6,7 +6,6 @@ import java.util.Map;
 import com.bridgelabz.greetingapp.Services.Greeting;
 import com.bridgelabz.greetingapp.Services.GreetingService;
 
-import org.apache.logging.log4j.message.Message;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,6 +47,11 @@ public class GreetingController {
     public String addDatalName(@RequestParam String lName,@RequestParam String message){
         id +=1;
         return gService.addData(new Greeting(id, "", lName,message));
+    }
+
+    @GetMapping("/msgbyID")
+    public String greetingMessageByID(@RequestParam int id){     
+        return gService.greetingMessageByID(id);
     }
 
 }
