@@ -30,8 +30,8 @@ public class GreetingController {
     }
 
     @RequestMapping("/hello")
-	public String home(@RequestParam String name) {
-		return "Hello "+name;
+	public String home() {
+		return "Hello ";
 	}
 
     @PostMapping("/addData")
